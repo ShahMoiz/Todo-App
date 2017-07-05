@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!--<meta name="viewport" content="width=full, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">-->
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="heading">
+        <h1>AppDot Todo List</h1>
+        <p class="copyright">Copyright &copy; Designed and Developed By <a href="_https://shahmoiz.com/">Abdul Moiz</a></p>
+    </div>
+    <div><a href="diary.html" onclick="testing()">Diary</a></div>
+    <div id="box">
+        <h3>What's Your Plan</h3>
+            <div class="contentDiv">
+                <input type="text"  id="todo" onkeypress="handle(event)" placeholder="Eg# Go to School Tomorrow">
+                <span id="submitButDiv">
+                    <input type="submit" id="sub" onclick="afterAddTask.addYourPlan()" value="Add your Task">
+                </span>
+            </div>
+    </div>
+    
+    <!--<ul id="todoList">
+    </ul>-->
+<ul  class="hFont" id="todoList">
+            <h3>Your Future Plan</h3>
+            <div id="content">
+            </div>
+</ul>
+    <div id="popupNoti">
+    </div>
+
+    
+    <script src="main.js"></script>
+
+</body>
+</html>
