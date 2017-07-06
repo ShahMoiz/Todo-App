@@ -10,7 +10,7 @@ function handle(e) {
     }
 }
 window.onload = () => {
-    afterAddTask.forLoop();
+    // afterAddTask.forLoop();
 };
 class AfterAddTask {
     specificDate() {
