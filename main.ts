@@ -45,8 +45,8 @@ class AfterAddTask{
             '<div class="todoListText">' +
                 '<li>' + 
                     '<input type="checkbox"><span class="planHeading">'+ todoArr[i] + '</span><div class="inputDltOrEdit">' +
-                        '<input type="submit" id="sub" value="delete item" onclick="afterAddTask.dlt(\''+ todoArr[i]+ '\')">' +
-                        '<input type="submit" id="sub" value="Edit item" onclick="afterAddTask.edit(\''+ todoArr[i]+ '\')">' +
+                        '<input type="submit" id="sub" value="delete item" onclick="afterAddTask.dlt(\''+ i+ '\')">' +
+                        '<input type="submit" id="sub" value="Edit item" onclick="afterAddTask.edit(\''+ i+ '\')">' +
                     '</div>' +
                 '</li>' +
                 '<p>Task Added On <b>'+ afterAddTask.specificDate() + '</b></p></li>' +
@@ -88,22 +88,23 @@ class AfterAddTask{
         }
         else {
             // console.log("Add Task If else Condition");
-            todoArr.push(inputTodo.value);
+            var i = todoArr.push(inputTodo.value);
+            // console.log(todoArr.push(inputTodo.value))
             console.log("Todo Arr", todoArr);
             localStorage.setItem('TodoArray', JSON.stringify(todoArr));
             console.log(
             localStorage.setItem('TodoArray', JSON.stringify(todoArr)))
             this.forLoop();
-            popupNoti.innerHTML = '<p>Your Plan Added Successfully In Your Diary <a href="#">Undo</a></p>';
+            popupNoti.innerHTML = '<p>Your Plan Added Successfully In Your Diary <button onclick="afterAddTask.dlt('+ (i-1) +')">Undo</button></p>';
             this.popUpNotifier();
         }
-        inputTodo.value = null;
+        // inputTodo.value = null;
 
     }
 
 dlt(j){
-    
-    todoArr.splice(todoArr.indexOf(j), 1);
+    console.log("dlt works", j )
+    todoArr.splice(j, 1);
     localStorage.setItem('TodoArray', JSON.stringify(todoArr));
     
     contentDiv.innerHTML = "";
@@ -115,16 +116,16 @@ dlt(j){
     
 }
 
-
+// var a = {name: 'mozi', id: 12}
 edit(j): void{
     // console.log(j)
-    let index: number = todoArr.indexOf(j);
-    let inputTodoValue: string = j;
-    console.log(inputTodoValue);
+    // let index: number = todoArr.indexOf(j);
+    // let inputTodoValue: string = j;
+    // console.log(inputTodoValue);
     let v = (<HTMLCollectionOf<any>>document.getElementsByClassName('planHeading'))
-    v[index].innerHTML = '<input type="text" id="todo1" onkeypress="afterAddTask.onkey(event,'+ index +')">';
-    let inputTodo1= (<HTMLInputElement>document.getElementById('todo1')); 
-    inputTodo1.value = inputTodoValue;
+    v[j].innerHTML = '<input type="text" id="todo'+ j+'" onkeypress="afterAddTask.onkey(event,'+ j +')">';
+    let inputTodo1= (<HTMLInputElement>document.getElementById('todo'+ j +''));
+    // inputTodo1.value = inputTodoValue;
     // submitButDiv.innerHTML = '<input type="submit" id="sub" onclick="afterAddTask.editTask(index)" value="Edit your Task">';
 }
 onkey(e, t){
@@ -135,7 +136,7 @@ onkey(e, t){
     }
 }
 editTask(i: number): void{
-    let inputTodo1= (<HTMLInputElement>document.getElementById('todo1'));     
+    let inputTodo1= (<HTMLInputElement>document.getElementById('todo'+ i +''));     
     // console.log("Task Is Replaced With", inputTodo.value);
     todoArr[i] = inputTodo1.value;
     localStorage.setItem('TodoArray', JSON.stringify(todoArr));
