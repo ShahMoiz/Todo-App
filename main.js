@@ -1,16 +1,14 @@
-let todoArr = [];
-let inputTodo = document.getElementById('todo');
-let todoULList = document.getElementById('todoList');
-let submitButDiv = document.getElementById('submitButDiv');
-let popupNoti = document.getElementById('popupNoti');
-let contentDiv = document.getElementById('content');
+let todoArr = [], inputTodo = document.getElementById('todo'), todoULList = document.getElementById('todoList'), submitButDiv = document.getElementById('submitButDiv'), popupNoti = document.getElementById('popupNoti'), contentDiv = document.getElementById('content');
 function handle(e) {
     if (e.keyCode == 13) {
         afterAddTask.addYourPlan();
     }
 }
 window.onload = () => {
-    // afterAddTask.forLoop();
+    // let url = window.location.pathname;
+    // if(url.substring(url.lastIndexOf('/')+1) == 'diary.html'){
+    afterAddTask.forLoop();
+    // }
 };
 class AfterAddTask {
     specificDate() {
@@ -29,17 +27,21 @@ class AfterAddTask {
         if (storedData) {
             todoArr = JSON.parse(storedData);
         }
-        for (let i = 0; i < todoArr.length; i++) {
-            contentDiv.innerHTML +=
-                '<div class="todoListText">' +
-                    '<li>' +
-                    '<input type="checkbox"><span class="planHeading">' + todoArr[i] + '</span><div class="inputDltOrEdit">' +
-                    '<input type="submit" id="sub" value="delete item" onclick="afterAddTask.dlt(\'' + todoArr[i] + '\')">' +
-                    '<input type="submit" id="sub" value="Edit item" onclick="afterAddTask.edit(\'' + todoArr[i] + '\')">' +
-                    '</div>' +
-                    '</li>' +
-                    '<p>Task Added On <b>' + afterAddTask.specificDate() + '</b></p></li>' +
-                    '</div>';
+        let url = window.location.pathname;
+        if (url.substring(url.lastIndexOf('/') + 1) == 'diary.html') {
+            console.log("Local Storage ", JSON.parse(storedData));
+            for (let i = 0; i < todoArr.length; i++) {
+                contentDiv.innerHTML +=
+                    '<div class="todoListText">' +
+                        '<li>' +
+                        '<input type="checkbox"><span class="planHeading">' + todoArr[i] + '</span><div class="inputDltOrEdit">' +
+                        '<input type="submit" id="sub" value="delete item" onclick="afterAddTask.dlt(\'' + todoArr[i] + '\')">' +
+                        '<input type="submit" id="sub" value="Edit item" onclick="afterAddTask.edit(\'' + todoArr[i] + '\')">' +
+                        '</div>' +
+                        '</li>' +
+                        '<p>Task Added On <b>' + afterAddTask.specificDate() + '</b></p></li>' +
+                        '</div>';
+            }
         }
     }
     errorMsg() {
@@ -76,8 +78,9 @@ class AfterAddTask {
         else {
             // console.log("Add Task If else Condition");
             todoArr.push(inputTodo.value);
+            console.log("Todo Arr", todoArr);
             localStorage.setItem('TodoArray', JSON.stringify(todoArr));
-            // console.log("Todo Arr", todoArr);
+            console.log(localStorage.setItem('TodoArray', JSON.stringify(todoArr)));
             this.forLoop();
             popupNoti.innerHTML = '<p>Your Plan Added Successfully In Your Diary <a href="#">Undo</a></p>';
             this.popUpNotifier();

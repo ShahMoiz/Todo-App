@@ -1,9 +1,9 @@
-let todoArr: Object[] = [];
-let inputTodo= (<HTMLInputElement>document.getElementById('todo'));
-let todoULList = (<HTMLHtmlElement>document.getElementById('todoList'));
-let submitButDiv = (<HTMLInputElement>document.getElementById('submitButDiv'));
-let popupNoti = (<HTMLInputElement>document.getElementById('popupNoti'));
-let contentDiv = (<HTMLHtmlElement>document.getElementById('content'));
+let todoArr: Object[] = [],
+inputTodo= (<HTMLInputElement>document.getElementById('todo')),
+todoULList = (<HTMLHtmlElement>document.getElementById('todoList')),
+submitButDiv = (<HTMLInputElement>document.getElementById('submitButDiv')),
+popupNoti = (<HTMLInputElement>document.getElementById('popupNoti')),
+contentDiv = (<HTMLHtmlElement>document.getElementById('content'));
 
 function handle(e){
     if(e.keyCode == 13){
@@ -12,7 +12,10 @@ function handle(e){
 }
 
 window.onload = () => {
-    // afterAddTask.forLoop();
+    // let url = window.location.pathname;
+    // if(url.substring(url.lastIndexOf('/')+1) == 'diary.html'){
+        afterAddTask.forLoop();
+    // }
 }
 class AfterAddTask{
     specificDate(){
@@ -33,6 +36,10 @@ class AfterAddTask{
         if (storedData) {
             todoArr = JSON.parse(storedData);
         }
+        
+    let url = window.location.pathname;
+    if(url.substring(url.lastIndexOf('/')+1) == 'diary.html'){
+        console.log("Local Storage ",JSON.parse(storedData))
         for(let i = 0; i < todoArr.length; i++){
             contentDiv.innerHTML +=
             '<div class="todoListText">' +
@@ -44,6 +51,7 @@ class AfterAddTask{
                 '</li>' +
                 '<p>Task Added On <b>'+ afterAddTask.specificDate() + '</b></p></li>' +
             '</div>' ;
+    }
     }
     }
     errorMsg(){
@@ -81,13 +89,16 @@ class AfterAddTask{
         else {
             // console.log("Add Task If else Condition");
             todoArr.push(inputTodo.value);
+            console.log("Todo Arr", todoArr);
             localStorage.setItem('TodoArray', JSON.stringify(todoArr));
-            // console.log("Todo Arr", todoArr);
+            console.log(
+            localStorage.setItem('TodoArray', JSON.stringify(todoArr)))
             this.forLoop();
             popupNoti.innerHTML = '<p>Your Plan Added Successfully In Your Diary <a href="#">Undo</a></p>';
             this.popUpNotifier();
         }
         inputTodo.value = null;
+
     }
 
 dlt(j){
