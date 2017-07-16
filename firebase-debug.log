@@ -1,0 +1,36 @@
+[debug] [2017-07-15T22:28:40.356Z] ----------------------------------------------------------------------
+[debug] [2017-07-15T22:28:40.382Z] Command:      C:\Program Files\nodejs\node.exe C:\Users\Admin\AppData\Roaming\npm\node_modules\firebase-tools\bin\firebase serve
+[debug] [2017-07-15T22:28:40.383Z] CLI Version:  3.9.1
+[debug] [2017-07-15T22:28:40.383Z] Platform:     win32
+[debug] [2017-07-15T22:28:40.383Z] Node Version: v6.11.0
+[debug] [2017-07-15T22:28:40.384Z] Time:         Sun Jul 16 2017 03:28:40 GMT+0500 (Pakistan Standard Time)
+[debug] [2017-07-15T22:28:40.384Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-07-15T22:28:40.437Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-15T22:28:40.437Z] > authorizing via signed-in user
+[debug] [2017-07-15T22:28:40.439Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2017-07-15T22:28:40.440Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token { refresh_token: '1/fD6Zce9BK2T7Wcxjqk5Ajmibe_KDNit6J-G7KftRJ-c',
+  client_id: '563584335869-fgrhgmd47bqnekij5i8b5pr03ho849e6.apps.googleusercontent.com',
+  client_secret: 'j9iVZfS8kkCEFUPaAeJV0sAi',
+  grant_type: 'refresh_token',
+  scope: 'email https://www.googleapis.com/auth/cloud-platform https://www.googleapis.com/auth/cloudplatformprojects.readonly https://www.googleapis.com/auth/firebase openid' } 
+ Sun Jul 16 2017 03:28:40 GMT+0500 (Pakistan Standard Time)
+[debug] [2017-07-15T22:28:42.546Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-15T22:28:42.581Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/ahadees-8aeb2  
+ Sun Jul 16 2017 03:28:42 GMT+0500 (Pakistan Standard Time)
+[debug] [2017-07-15T22:28:45.755Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-15T22:28:45.755Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/ahadees-8aeb2/tokens  
+ Sun Jul 16 2017 03:28:45 GMT+0500 (Pakistan Standard Time)
+[debug] [2017-07-15T22:28:47.489Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from 'E:\Javascript Projects\TodoApp'...
+[info] 
+[debug] [2017-07-15T22:28:47.496Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/ahadees-8aeb2  
+ Sun Jul 16 2017 03:28:47 GMT+0500 (Pakistan Standard Time)
+[debug] [2017-07-15T22:28:50.154Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-15T22:28:50.154Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/421374039513/clients/_:getWebAppConfig  
+ Sun Jul 16 2017 03:28:50 GMT+0500 (Pakistan Standard Time)
+[debug] [2017-07-15T22:28:53.541Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: ./public/.
+[info] +  hosting: Local server: http://localhost:5000
+

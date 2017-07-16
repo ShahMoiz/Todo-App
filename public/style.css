@@ -1,0 +1,113 @@
+* {
+    margin: 0 auto;
+    text-align: center;
+    color: #424242;
+}
+a:hover {
+    text-decoration: none;
+}
+.hFont, .subheading3{
+    font-family: "Adobe Caslon Pro", "Hoefler Text", Georgia, Garamond, Times, serif;
+    letter-spacing:0.15em;
+    text-transform: lowercase;
+    font-variant: small-caps;
+}
+#heading > h1 {
+    margin: 40px auto;
+    line-height: 145%;
+    font-size: 22pt;
+}
+
+#container, .newBox {
+    border: 1px solid black;
+    width: 400px;
+    margin: 0 auto;
+    padding: 0px 0 20px 0px;
+    margin-bottom: 10px;
+
+}
+.subheading3 {
+    border: 1px solid gray;
+    background: #7acfad;
+    font-family: 'Inder', sans-serif;
+    letter-spacing:0.3em;
+    line-height: 245%;
+    font-size: 16pt;
+}
+#container #todo {
+    background:#FFFFFF;
+    font-size:16px ;
+    height: 37px ;
+    line-height:37px ;
+    width: 332px ;
+    padding: 10px ;
+    margin: 20px;
+    box-shadow: 1px 3px 0px #706060; 
+    text-align: left;
+}
+.sub, .mybtn {
+    display: inline-block;
+    text-align: center;
+    padding: 6px 29px;
+    border: 2px solid #4b7f6a;
+    background: #7acfad;
+    background: -moz-linear-gradient(top, #7acfad, #4b7f6a);
+    background: linear-gradient(to bottom, #7acfad, #4b7f6a);
+    text-shadow: #2f5043 1px 1px 1px;
+    color: #ffffff;
+}
+.sub:hover,
+.sub:focus,
+#mybtn:hover,
+#mybtn:focus {
+    background: #92f8d0;
+    background: -moz-linear-gradient(top, #92f8d0, #5a987f);
+    background: linear-gradient(to bottom, #92f8d0, #5a987f);
+}
+.sub:active {
+    background: #4b7f6a;
+    background: -moz-linear-gradient(top, #4b7f6a, #4b7f6a);
+    background: linear-gradient(to bottom, #4b7f6a, #4b7f6a);
+}
+#popupNoti > p {
+    width: 500px;
+    font-size: 8px;
+    border: 1px solid black;
+    color: #424242;
+    background: #7acfad;
+    font-family: 'Inder', sans-serif;
+    letter-spacing:0.05em;
+    text-transform: lowercase;
+    line-height: 245%;
+    font-size: 12pt;
+    font-variant: small-caps;
+    border-radius: 5px;
+}
+#popupNoti {
+    display: none;
+}
+
+
+#todoList {
+    list-style-type: none;
+}
+#todoList li {
+    text-align: left;
+}
+#todoList .todoListText {
+    margin: 10px;padding: 10px;
+    border: 2px solid black;
+    color: black;
+}
+#todoList .checkbox {
+    position: relative;
+    bottom: 20;
+}
+#todoList .todoListText p {
+    text-align: left;
+    font-size: 8pt;
+    letter-spacing:0.1em;
+}
+.inputDltOrEdit {
+    float: right;
+}
